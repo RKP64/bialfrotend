@@ -1,0 +1,115 @@
+/* src/App.module.css */
+
+/* Global CSS Variables (Your BIAL-inspired theme) */
+:root {
+  --color-primary-dark: #2C3E50; /* Dark Blue/Indigo */
+  --color-primary-medium: #3498DB; /* Medium Blue/Teal */
+  --color-accent-purple: #A29BFE; /* Soft Lavender/Light Purple for accents */
+  --color-success-green: #27AE60; /* Subtle Green */
+  --color-bg-light: #F8F9FA; /* Off-White/Light Gray for main background */
+  --color-text-dark: #333333; /* Dark Gray for primary text */
+  --color-border-light: #E0E0E0; /* Light Gray for borders/separators */
+  --color-sidebar-bg: #FFFFFF; /* White for sidebar background */
+  --color-content-bg: #FFFFFF; /* White for content area background */
+
+  --font-family-primary: 'Inter', 'Roboto', 'Open Sans', sans-serif;
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --shadow-light: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0px 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--color-bg-light);
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+
+/* Overall App Container */
+.appContainer {
+  display: flex;
+  flex-direction: column; /* Header on top, then main content row */
+  min-height: 100vh;
+  /* Optional: Subtle background gradient or pattern */
+  background: linear-gradient(135deg, rgba(172, 202, 240, 0.05), rgba(200, 180, 250, 0.05)), var(--color-bg-light);
+}
+
+/* Main Content Area (Sidebar + Dynamic Content) */
+.mainContent {
+  display: flex;
+  flex-grow: 1; /* Takes remaining vertical space */
+  padding: 20px;
+  gap: 20px; /* Space between sidebar and content */
+}
+
+/* Content Area for Conversational Agent or MDA Reviewer */
+.contentArea {
+  flex-grow: 1; /* Takes up remaining horizontal space */
+  background-color: var(--color-content-bg);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-medium);
+  padding: 30px; /* Padding inside the content box */
+  overflow-y: auto; /* Enable scrolling for long content */
+  max-height: calc(100vh - 40px - 70px); /* Adjust based on header height + mainContent padding */
+}
+
+/* Utility classes (optional, can be in a separate file) */
+.flexCol { display: flex; flex-direction: column; }
+.flexRow { display: flex; flex-direction: row; }
+.alignCenter { align-items: center; }
+.justifyBetween { justify-content: space-between; }
+.gap10 { gap: 10px; }
+.gap20 { gap: 20px; }
+
+/* Basic global styling for common elements for consistency */
+button {
+  background-color: var(--color-primary-medium);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-light);
+}
+
+button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+input[type="text"],
+textarea {
+  border: 1px solid var(--color-border-light);
+  padding: 12px 15px;
+  border-radius: var(--border-radius-small);
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  width: 100%;
+  box-sizing: border-box; /* Include padding in width calculation */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-medium);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary-dark);
+  margin-top: 0;
+  margin-bottom: 15px;
+}

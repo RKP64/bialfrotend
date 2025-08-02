@@ -1,0 +1,103 @@
+/* src/components/Sidebar/Sidebar.module.css */
+.sidebar {
+  width: 280px; /* Slightly wider sidebar */
+  background-color: var(--color-sidebar-bg);
+  padding: 20px;
+  box-shadow: var(--shadow-light);
+  border-radius: var(--border-radius-medium);
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  overflow-y: auto; /* Enable scrolling if sidebar content is long */
+  max-height: calc(100vh - 40px - 70px); /* Similar calc as contentArea */
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.sectionHeader {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: var(--border-radius-small);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+}
+
+.navItem:hover {
+  background-color: var(--color-bg-light);
+  color: var(--color-primary-medium);
+}
+
+.navItem.active {
+  background-color: var(--color-primary-medium);
+  color: white;
+  font-weight: 500;
+  box-shadow: var(--shadow-light);
+}
+
+.settingItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.settingItem label {
+  flex-basis: 80px; /* Align labels */
+  color: var(--color-text-dark);
+}
+
+.settingItem input[type="range"] {
+  flex-grow: 1;
+  -webkit-appearance: none;
+  height: 8px;
+  background: var(--color-border-light);
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+  border-radius: 5px;
+}
+
+.settingItem input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-primary-medium);
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+}
+
+.settingItem input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-primary-medium);
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+}
+
+.settingItem span {
+  width: 40px;
+  text-align: right;
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
